@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class LoginScreen extends StatelessWidget {
+  static const String routeName = 'login';
   const LoginScreen({super.key});
 
   @override
