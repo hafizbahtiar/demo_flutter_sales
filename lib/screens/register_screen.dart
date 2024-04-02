@@ -1,15 +1,17 @@
-import 'package:demo_flutter_sales/providers/login_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
-class LoginScreen extends StatelessWidget {
-  static const String routeName = 'login';
-  const LoginScreen({super.key});
+class RegisterScreen extends StatelessWidget {
+  static const String routeName = 'register';
+
+  const RegisterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: const Text('Register'),
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30.0),
@@ -19,11 +21,19 @@ class LoginScreen extends StatelessWidget {
             children: <Widget>[
               const SizedBox(height: 100.0),
               const Text(
-                'Welcome',
+                'Register',
                 style: TextStyle(
                   color: Colors.blue,
                   fontSize: 36.0,
                   fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 20.0),
+              const TextField(
+                decoration: InputDecoration(
+                  labelText: 'Username',
+                  prefixIcon: Icon(Icons.person),
+                  border: OutlineInputBorder(),
                 ),
               ),
               const SizedBox(height: 20.0),
@@ -48,34 +58,10 @@ class LoginScreen extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    bool success =
-                        Provider.of<LoginProvider>(context, listen: false)
-                            .login();
-                    if (success) {
-                      Navigator.pushReplacementNamed(context, 'home');
-                    }
+                    Navigator.pushNamed(context, 'login');
                   },
-                  child: const Text('LOGIN'),
+                  child: const Text('REGISTER'),
                 ),
-              ),
-              const SizedBox(height: 20.0),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  const Text("Don't have an account? "),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, 'register');
-                    },
-                    child: const Text(
-                      'Join Us!',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.blue,
-                      ),
-                    ),
-                  ),
-                ],
               ),
             ],
           ),

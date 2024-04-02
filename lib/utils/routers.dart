@@ -1,5 +1,6 @@
 import 'package:demo_flutter_sales/screens/home_screen.dart';
 import 'package:demo_flutter_sales/screens/login_screen.dart';
+import 'package:demo_flutter_sales/screens/register_screen.dart';
 import 'package:flutter/material.dart';
 
 Route<dynamic> generateRoute(RouteSettings routeSettings) {
@@ -12,11 +13,19 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
         },
       );
 
-          case HomeScreen.routeName:
+    case HomeScreen.routeName:
       return MaterialPageRoute(
         settings: routeSettings,
         builder: (_) {
           return const HomeScreen();
+        },
+      );
+
+      case RegisterScreen.routeName:
+      return MaterialPageRoute(
+        settings: routeSettings,
+        builder: (_) {
+          return const RegisterScreen();
         },
       );
 

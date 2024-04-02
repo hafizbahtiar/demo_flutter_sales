@@ -5,10 +5,11 @@ class LoginProvider extends ChangeNotifier {
 
   bool get isLoggedIn => _isLoggedIn;
 
-  void login() {
+  bool login() {
     // Perform login logic here, e.g., validate credentials
     // For simplicity, let's assume login is successful
     _isLoggedIn = true;
     notifyListeners();
+    return true; // Return true to indicate successful login
   }
 }
