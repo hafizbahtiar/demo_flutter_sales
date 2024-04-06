@@ -1,4 +1,4 @@
-import 'package:demo_flutter_sales/screens/common/form_row.dart';
+import 'package:demo_flutter_sales/screens/common/index.dart';
 import 'package:flutter/material.dart';
 import 'package:package_info/package_info.dart';
 
@@ -12,24 +12,7 @@ class AboutScreen extends StatefulWidget {
 }
 
 class _AboutScreenState extends State<AboutScreen> {
-  String _version = '';
-  String _appName = '';
-
   @override
-  void initState() {
-    super.initState();
-    _initPackageInfo();
-  }
-
-  Future<void> _initPackageInfo() async {
-    PackageInfo packageInfo = await PackageInfo.fromPlatform();
-    setState(() {
-      _version = packageInfo.version;
-      _appName = packageInfo.appName;
-    });
-  }
-
- @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
