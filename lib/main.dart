@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
             return Consumer<LoginProvider>(
               builder: (context, loginProvider, _) {
                 return loginProvider.isLoggedIn
-                    ? const HomeScreen()
+                    ?  HomeScreen()
                     : const LoginScreen();
               },
             );
